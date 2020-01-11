@@ -11,12 +11,14 @@ func challenge2(input: String) -> Bool {
     // create lowercased version of the string to ignore case
     let lowercased = input.lowercased()
 
+    // if the reverse is equal to the string itself, its a palindrome
     return String(lowercased.reversed()) == lowercased
 }
 
 
-assert(challenge2(input: "Hannah") == true, "Challenge 2 failed")
-assert(challenge2(input: "racecar") == true, "Challenge 2 failed")
-assert(challenge2(input: "spencer") == false, "Challenge 2 failed")
+challenge2(input: "rotator") == true
+challenge2(input: "Rats live on no evil star") == true
+challenge2(input: "Never odd or even") == false
+challenge2(input: "Hello, world") == false
 
 //: [Next](@next)

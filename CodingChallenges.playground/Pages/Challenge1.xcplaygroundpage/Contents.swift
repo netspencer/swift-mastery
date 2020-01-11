@@ -8,22 +8,25 @@ import Foundation
 /// and returns true if the string has only unique letters,
 /// taking letter case into account.
 func challenge1(input: String) -> Bool {
-    var lettersSeen = [Character]()
+    // create an array to keep track of characters that have been seen in the string
+    var characters = [Character]()
 
-    for letter in input {
-        if lettersSeen.contains(letter) {
+    // loop over each character in the input string
+    for character in input {
+        // if the character is already contained in the characters array, the array is not unique
+        if characters.contains(character) {
             return false
         }
 
-        lettersSeen.append(letter)
+        characters.append(character)
     }
 
     return true
 }
 
-assert(challenge1(input: "No duplicates") == true, "Challenge 1 failed")
-assert(challenge1(input: "abcdefghijklmnopqrstuvwxyz") == true, "Challenge 1 failed")
-assert(challenge1(input: "AaBbCc") == true, "Challenge 1 failed")
-assert(challenge1(input: "Hello, world") == false, "Challenge 1 failed")
+challenge1(input: "No duplicates") == true
+challenge1(input: "abcdefghijklmnopqrstuvwxyz") == true
+challenge1(input: "AaBbCc") == true
+challenge1(input: "Hello, world") == false
 
 //: [Next](@next)
