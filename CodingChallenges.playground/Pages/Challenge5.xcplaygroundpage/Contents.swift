@@ -2,14 +2,12 @@
 
 import Foundation
 
+/// Write a function that accepts a string, and returns how many times a specific
+/// character appears, taking case into account.
 func challenge5(_ string: String, _ character: Character) -> Int {
-    var count = 0
-    for char in string {
-        if char == character {
-            count = count + 1
-        }
+    return string.reduce(0) { count, char -> Int in
+        return char == character ? count + 1 : count
     }
-    return count
 }
 
 challenge5("The rain in Spain", "a") == 2
